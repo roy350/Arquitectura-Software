@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Comentarios</h2>
+
+{% if latest_message_list %}
+    <ul>
+    {% for message in latest_message_list %}
+        <li>{{ message.text }} {{ message.pub_date }} {{ip}}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+<form action="." method="post">
+  {% csrf_token %}
+  Comentario:<br>
+  <input type="text" name="text" value="{{ message.text }}">
+  <br>
+  <input type="submit" value="Submit">
+</form>
+
+
+</body>
+</html>
