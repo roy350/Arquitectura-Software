@@ -80,9 +80,9 @@ DATABASES = {
         'NAME': 'message',
         'USER': 'roy350',
         'PASSWORD': '1234',
-        'HOST': 'localhost',
-        'PORT': 8000,
-        'CHARSET': 'UTF-8',
+        'HOST': '52.14.54.225',
+        'PORT': 5432,
+        'CHARSET': 'UTF8',
     }
 }
 
