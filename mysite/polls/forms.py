@@ -8,7 +8,9 @@ class Form(forms.ModelForm):
         model = Message
         fields = [
             'text',
+            'ip',
         ]
         labels = {
             'text' : 'Mensaje',
+            'ip': 'Ip',
         }

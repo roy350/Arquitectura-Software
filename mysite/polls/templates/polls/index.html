@@ -7,7 +7,7 @@
 {% if latest_message_list %}
     <ul>
     {% for message in latest_message_list %}
-        <li>{{ message.text }} {{ message.pub_date }} {{ip}}</li>
+        <li>{{ message.text }}, {{ message.pub_date }}, {{ message.ip }}</li>
     {% endfor %}
     </ul>
 {% endif %}
@@ -16,6 +16,7 @@
   {% csrf_token %}
   Comentario:<br>
   <input type="text" name="text" value="{{ message.text }}">
+  <input type="hidden" name="ip" value="{{ ip }}">
   <br>
   <input type="submit" value="Submit">
 </form>
