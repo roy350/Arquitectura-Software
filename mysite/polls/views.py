@@ -6,7 +6,6 @@ from .models import Message
 from datetime import datetime
 from ipware import get_client_ip
 import datetime
-from django.utils.timezone import utc
 
 
 
@@ -23,12 +22,6 @@ def index(request):
             #return redirect('polls/index.html')
 
     latest_message_list = Message.objects.order_by('-pub_date')
-    print(latest_message_list[0])
-    print(latest_message_list[0].pub_date)
-    now = datetime.datetime.utcnow().replace(tzinfo=tz.tzutc())
-    latest_message_list[0].pub_date = now
-    print(now)
-    print(latest_message_list[0].pub_date)
     template = loader.get_template('polls/index.html')
     ip, is_routable = get_client_ip(request)
     context = {
