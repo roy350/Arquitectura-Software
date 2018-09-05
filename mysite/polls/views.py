@@ -6,6 +6,10 @@ from .models import Message
 from datetime import datetime
 from ipware import get_client_ip
 
+
+
+
+
 from polls.forms import Form
 
 def index(request):
