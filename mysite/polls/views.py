@@ -25,7 +25,7 @@ def index(request):
     latest_message_list = Message.objects.order_by('-pub_date')
     print(latest_message_list[0])
     print(latest_message_list[0].pub_date)
-    now = datetime.datetime.utcnow().replace(tzinfo=utc)
+    now = datetime.datetime.utcnow().replace(tzinfo=awt)
     latest_message_list[0].pub_date = now
     print(now)
     print(latest_message_list[0].pub_date)
