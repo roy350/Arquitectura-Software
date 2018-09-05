@@ -14,16 +14,16 @@ import datetime
 from polls.forms import Form
 
 def index(request):
+    ip, is_routable = get_client_ip(request)
     if request.method == "POST":
         form = Form(request.POST)
-        if form.is_valid():
-
-            form.save()
-            #return redirect('polls/index.html')
+        if (request.POST['ip'] == ip):
+            if form.is_valid():
+                form.save()
+                #return redirect('polls/index.html')
 
     latest_message_list = Message.objects.order_by('-pub_date')
     template = loader.get_template('polls/index.html')
-    ip, is_routable = get_client_ip(request)
     context = {
         'latest_message_list': latest_message_list,
         'ip' : ip,
