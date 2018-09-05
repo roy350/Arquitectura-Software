@@ -22,7 +22,8 @@ def index(request):
             #return redirect('polls/index.html')
 
     latest_message_list = Message.objects.order_by('-pub_date')
-    latest_message_list[0].pub_date = localtime(now()) 
+    latest_message_list[0].pub_date = localtime(now())
+    print(latest_message_list[0])
     print(latest_message_list);
     template = loader.get_template('polls/index.html')
     ip, is_routable = get_client_ip(request)
