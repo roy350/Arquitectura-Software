@@ -25,6 +25,7 @@ def index(request):
     print(latest_message_list[0])
     print(latest_message_list[0].pub_date)
     latest_message_list[0].pub_date = localtime(now())
+    print(localtime(now()))
     print(latest_message_list[0].pub_date)
     template = loader.get_template('polls/index.html')
     ip, is_routable = get_client_ip(request)
