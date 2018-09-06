@@ -9,10 +9,10 @@ class Form(forms.ModelForm):
         fields = [
             'text',
             'ip',
-            'pub_date'
+            'pub_date',
         ]
         labels = {
             'text' : 'Mensaje',
             'ip': 'Ip',
-            'pub_date': 'Pub_date'
+            'pub_date': 'Pub_date',
         }
