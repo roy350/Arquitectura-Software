@@ -19,7 +19,7 @@ def index(request):
         print("antes del cambio")
         print(request.POST['pub_date'])
         print(str(datetime.datetime.now()))
-        #request.POST['pub_date'] = str(datetime.datetime.now())
+        request.POST['pub_date'] = str(datetime.datetime.now())
         print("despues del cambio")
         form = Form(request.POST)
         if (request.POST['ip'] == ip):
