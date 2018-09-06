@@ -16,7 +16,7 @@ from polls.forms import Form
 def index(request):
     ip, is_routable = get_client_ip(request)
     if request.method == "POST":
-        request.POST['pub-date'] = datetime.datetime.now()
+        request.POST['pub_date'] = datetime.datetime.now()
         form = Form(request.POST)
         if (request.POST['ip'] == ip):
             if form.is_valid():
