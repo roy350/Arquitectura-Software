@@ -16,11 +16,15 @@ from polls.forms import Form
 def index(request):
     ip, is_routable = get_client_ip(request)
     if request.method == "POST":
+        print("antes del cambio")
         request.POST['pub_date'] = str(datetime.datetime.now())
+        print("despues del cambio")
         form = Form(request.POST)
         if (request.POST['ip'] == ip):
             if form.is_valid():
+                print("antes de guardar")
                 form.save()
+                print("despues de guardar")
                 #return redirect('polls/index.html')
 
     latest_message_list = Message.objects.order_by('-pub_date')
