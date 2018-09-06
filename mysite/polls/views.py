@@ -17,6 +17,7 @@ def index(request):
     ip, is_routable = get_client_ip(request)
     if request.method == "POST":
         print("antes del cambio")
+        print(request.POST['pub_date'])
         request.POST['pub_date'] = str(datetime.datetime.now())
         print("despues del cambio")
         form = Form(request.POST)
